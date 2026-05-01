@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUMÉ — Wear Your World</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Italiana&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ══════════════════ NAV ══════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">LUMÉ</div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+      <li><a href="#shop" class="nav-link" data-page="shop">Shop</a></li>
+      <li><a href="#mission" class="nav-link" data-page="mission">Our Mission</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-auth" id="openAuthBtn">Log In / Sign Up</button>
+      <div class="cart-icon" id="cartIcon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mob-link" data-page="home">Home</a>
+    <a href="#shop" class="mob-link" data-page="shop">Shop</a>
+    <a href="#mission" class="mob-link" data-page="mission">Our Mission</a>
+    <button class="btn-auth mob-auth" id="openAuthBtnMob">Log In / Sign Up</button>
+  </div>
+
+  <!-- ══════════════════ PAGES ══════════════════ -->
+
+  <!-- HOME PAGE -->
+  <section class="page active" id="page-home">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="sparkle-field" id="sparkleField"></div>
+      </div>
+      <div class="hero-content">
+        <span class="hero-tag">New Collection — Spring '26</span>
+        <h1 class="hero-title">Dress Like<br/><em>You Mean It</em></h1>
+        <p class="hero-sub">Trendy pieces for every mood, every moment, every you.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" data-page="shop">Shop Now</button>
+          <button class="btn-ghost" data-page="mission">Our Story</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card hc1">
+          <div class="hcard-inner">
+            <div class="hcard-emoji">👗</div>
+            <p>Dresses</p>
+          </div>
+        </div>
+        <div class="hero-card hc2">
+          <div class="hcard-inner">
+            <div class="hcard-emoji">👚</div>
+            <p>Tops</p>
+          </div>
+        </div>
+        <div class="hero-card hc3">
+          <div class="hcard-inner">
+            <div class="hcard-emoji">👜</div>
+            <p>Accessories</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Strip -->
+    <section class="categories-strip">
+      <h2 class="section-title">Shop by Vibe</h2>
+      <div class="cat-grid">
+        <div class="cat-card" data-cat="dresses">
+          <div class="cat-emoji">👗</div>
+          <div class="cat-label">Dresses</div>
+          <div class="cat-sub">32 styles</div>
+        </div>
+        <div class="cat-card" data-cat="tops">
+          <div class="cat-emoji">👚</div>
+          <div class="cat-label">Tops</div>
+          <div class="cat-sub">48 styles</div>
+        </div>
+        <div class="cat-card" data-cat="bottoms">
+          <div class="cat-emoji">👖</div>
+          <div class="cat-label">Bottoms</div>
+          <div class="cat-sub">27 styles</div>
+        </div>
+        <div class="cat-card" data-cat="outerwear">
+          <div class="cat-emoji">🧥</div>
+          <div class="cat-label">Outerwear</div>
+          <div class="cat-sub">19 styles</div>
+        </div>
+        <div class="cat-card" data-cat="accessories">
+          <div class="cat-emoji">👜</div>
+          <div class="cat-label">Accessories</div>
+          <div class="cat-sub">54 styles</div>
+        </div>
+        <div class="cat-card" data-cat="shoes">
+          <div class="cat-emoji">👠</div>
+          <div class="cat-label">Shoes</div>
+          <div class="cat-sub">41 styles</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured -->
+    <section class="featured-section">
+      <div class="featured-header">
+        <h2 class="section-title">✨ Fan Favorites</h2>
+        <button class="btn-text" data-page="shop">See all →</button>
+      </div>
+      <div class="products-grid" id="featuredGrid"></div>
+    </section>
+
+    <!-- Banner -->
+    <section class="banner-section">
+      <div class="banner-content">
+        <span class="banner-tag">Free Shipping</span>
+        <h2>On Orders Over $75</h2>
+        <p>Use code <strong>LUMÉ26</strong> at checkout for 15% off your first order 🌸</p>
+        <button class="btn-primary" data-page="shop">Start Shopping</button>
+      </div>
+      <div class="banner-deco">
+        <span>🌸</span><span>✨</span><span>💫</span><span>🌷</span><span>💖</span>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <h2 class="section-title">What They're Saying 💬</h2>
+      <div class="testimonials-track" id="testimonialsTrack">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"LUMÉ totally changed my wardrobe game. Every piece feels so intentional and cute!"</p>
+          <span>— Ava M., LA</span>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"The quality is *chef's kiss*. I get compliments every single time I wear something from here."</p>
+          <span>— Priya K., NYC</span>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Obsessed with the spring collection. The pinks are SO good. Already on my third order."</p>
+          <span>— Zoë T., Miami</span>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Sustainable AND stylish? LUMÉ is everything I didn't know I needed."</p>
+          <span>— Mia R., Chicago</span>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- SHOP PAGE -->
+  <section class="page" id="page-shop">
+    <div class="shop-hero">
+      <h1>The Collection</h1>
+      <p>Filter, browse, fall in love 🛍️</p>
+    </div>
+
+    <div class="shop-layout">
+      <!-- Sidebar filters -->
+      <aside class="shop-sidebar">
+        <h3>Filter</h3>
+        <div class="filter-group">
+          <label class="filter-label">Category</label>
+          <div class="filter-options" id="catFilter">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="dresses">Dresses</button>
+            <button class="filter-chip" data-filter="tops">Tops</button>
+            <button class="filter-chip" data-filter="bottoms">Bottoms</button>
+            <button class="filter-chip" data-filter="outerwear">Outerwear</button>
+            <button class="filter-chip" data-filter="accessories">Accessories</button>
+            <button class="filter-chip" data-filter="shoes">Shoes</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Price Range</label>
+          <div class="price-range">
+            <input type="range" id="priceRange" min="0" max="300" value="300" />
+            <span id="priceLabel">Up to $300</span>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Sort By</label>
+          <select id="sortSelect" class="sort-select">
+            <option value="default">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Product grid -->
+      <div class="shop-main">
+        <div class="shop-top-bar">
+          <span id="resultCount">Showing all items</span>
+        </div>
+        <div class="products-grid" id="shopGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION PAGE -->
+  <section class="page" id="page-mission">
+    <div class="mission-hero">
+      <div class="mission-blob"></div>
+      <div class="mission-hero-content">
+        <span class="hero-tag">Our Story</span>
+        <h1>Fashion with <em>Soul</em></h1>
+        <p class="mission-tagline">We believe getting dressed should feel like an act of joy — not an obligation.</p>
+      </div>
+    </div>
+
+    <div class="mission-body">
+      <div class="mission-block">
+        <div class="mission-icon-wrap">💖</div>
+        <div>
+          <h2>Born from a Big Feeling</h2>
+          <p>LUMÉ started in a tiny apartment in Los Angeles when our founder, Sofia, had one burning question: <em>why does getting dressed have to feel so stressful?</em> In 2021, she began designing pieces that felt as good as they looked — clothes that said something, meant something, and brought a little sparkle to ordinary days.</p>
+        </div>
+      </div>
+
+      <div class="mission-block reverse">
+        <div class="mission-icon-wrap">🌍</div>
+        <div>
+          <h2>Sustainably Made, Intentionally Designed</h2>
+          <p>Every garment in the LUMÉ collection is produced in small batches using ethically sourced fabrics — organic cotton, recycled fibers, and low-impact dyes. We partner with certified fair-trade factories and offset 100% of our shipping emissions. Looking cute shouldn't cost the planet.</p>
+        </div>
+      </div>
+
+      <div class="mission-block">
+        <div class="mission-icon-wrap">✨</div>
+        <div>
+          <h2>Inclusive by Design</h2>
+          <p>LUMÉ is made for every body, every background, every era. Our sizing runs XS–4XL, and every style is photographed on a diverse range of models. We design for real life — commutes, coffee dates, dance floors, and everything in between.</p>
+        </div>
+      </div>
+
+      <div class="mission-block reverse">
+        <div class="mission-icon-wrap">🌸</div>
+        <div>
+          <h2>Community First</h2>
+          <p>5% of every purchase goes directly to women-focused nonprofits — funding education, entrepreneurship, and wellness programs around the globe. When you shop LUMÉ, you're not just buying a dress. You're investing in a movement.</p>
+        </div>
+      </div>
+
+      <div class="mission-values">
+        <h2 class="section-title">Our Values</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <span>♻️</span>
+            <h4>Sustainability</h4>
+            <p>Eco-first materials, carbon-neutral shipping</p>
+          </div>
+          <div class="value-card">
+            <span>💫</span>
+            <h4>Empowerment</h4>
+            <p>Clothes that make you feel powerful</p>
+          </div>
+          <div class="value-card">
+            <span>🤝</span>
+            <h4>Fair Trade</h4>
+            <p>Fair wages for every hand that makes our clothes</p>
+          </div>
+          <div class="value-card">
+            <span>🌈</span>
+            <h4>Inclusivity</h4>
+            <p>XS–4XL, designed for every body</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mission-cta">
+        <h2>Ready to Join the Movement?</h2>
+        <p>Shop mindfully. Wear boldly. Be LUMÉ.</p>
+        <button class="btn-primary" data-page="shop">Shop the Collection</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ AUTH MODAL ══════════════════ -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal">
+      <button class="modal-close" id="closeModal">✕</button>
+      <div class="modal-tabs">
+        <button class="modal-tab active" id="tabLogin">Log In</button>
+        <button class="modal-tab" id="tabSignup">Sign Up</button>
+      </div>
+
+      <!-- Login Form -->
+      <div class="modal-form active" id="formLogin">
+        <h2>Welcome back ✨</h2>
+        <p class="form-sub">Log in to your LUMÉ account</p>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@example.com" id="loginEmail"/>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="••••••••" id="loginPass"/>
+        </div>
+        <button class="btn-primary full-width" id="loginBtn">Log In</button>
+        <p class="form-switch">Don't have an account? <a href="#" id="switchToSignup">Sign up →</a></p>
+      </div>
+
+      <!-- Signup Form -->
+      <div class="modal-form" id="formSignup">
+        <h2>Join LUMÉ 🌸</h2>
+        <p class="form-sub">Create your account to start shopping</p>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Sofia Rosé" id="signupName"/>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@example.com" id="signupEmail"/>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Create a password" id="signupPass"/>
+        </div>
+        <button class="btn-primary full-width" id="signupBtn">Create Account</button>
+        <p class="form-switch">Already have an account? <a href="#" id="switchToLogin">Log in →</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ CART DRAWER ══════════════════ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Bag 🛍️</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <span>🛒</span>
+        <p>Your bag is empty!</p>
+        <button class="btn-primary" data-page="shop">Start Shopping</button>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn-primary full-width">Checkout →</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">LUMÉ</div>
+        <p>Wear your world.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Shop</h4>
+        <a href="#" data-page="shop">New Arrivals</a>
+        <a href="#" data-page="shop">Dresses</a>
+        <a href="#" data-page="shop">Tops</a>
+        <a href="#" data-page="shop">Sale</a>
+      </div>
+      <div class="footer-links">
+        <h4>LUMÉ</h4>
+        <a href="#" data-page="mission">Our Mission</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+      </div>
+      <div class="footer-links">
+        <h4>Help</h4>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">Sizing Guide</a>
+        <a href="#">Contact Us</a>
+        <a href="#">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 LUMÉ. Made with 💖 for dreamers everywhere.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
